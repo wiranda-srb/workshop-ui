@@ -1,0 +1,31 @@
+  <app-search-form (value)="setEvent($event)" ></app-search-form>
+
+<p-table [value]="employeeList" [paginator]="true" [rows]="5">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Department</th>
+            <th>Job Title</th>
+            <th>Job Type</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employee>
+        <tr>
+            <td class="td-text-center">{{employee.department.departmentName}}</td>
+            <td class="td-text-center">{{employee.jobTitle.jobTitleName}}</td>
+            <td class="td-text-center">{{employee.jobTitle.jobType | jotTitleConvert}}</td>
+            <td class="td-text-center">{{employee.title+' '+employee.firstName+' '+employee.lastName}}</td>
+            <td class="td-text-center">{{employee.gender | genderConvert}}</td>
+            <td class="td-text-center">
+              <button pButton [routerLink]="['/edit']"  (click)="editEmployee(employee.employeeId)" label = "Edit"></button>
+            </td>
+            <td class="td-text-center">
+              <button pButton label = "Delete" (click)="deleteEmployee(employee.employeeId)"></button>
+            </td>
+
+        </tr>
+    </ng-template>
+</p-table>

@@ -1,0 +1,61 @@
+<div class= "p-grid" [formGroup]="searchConditionFormGourp">
+    <div class="p-col-2"></div>
+    <div class="p-col-2 txR">
+      Department: 
+    </div>
+    <div class="p-col-2 txL">
+      <p-dropdown formControlName="departmentCode" [options]="departmentDropdownList" placeholder="Select a Department"></p-dropdown>
+    </div>
+    <div class="p-col-1 txR">
+      Job Title: 
+    </div>
+    <div class="p-col-2 txL">
+      <p-dropdown formControlName="jobTitleCode" [options]="jobTitleDropdownList" placeholder="Select a Job Title"></p-dropdown>
+    </div>
+    <div class="p-col-2"></div>
+  
+    <div class="p-col-2"></div>
+    <div class="p-col-2 txR">
+      Job Type: 
+    </div>
+    <div class="p-col-5 txL">
+      <p-radioButton formControlName="jobType" name="jobtype" value="M" label="Manage  "></p-radioButton>
+      <p-radioButton formControlName="jobType" name="jobtype" value="O" label ="Operate"></p-radioButton>
+    </div>
+    <div class="p-col-3"></div>
+  
+    <div class="p-col-2"></div>
+    <div class="p-col-2 txR">
+      First Name:   
+    </div>
+    <div class="p-col-2 txL">
+      <input formControlName="firstName" type="text" pInputText>
+    </div>
+    <div class="p-col-1 txR">
+      Last Name :  
+    </div>
+    <div class="p-col-5 txL">
+      <input formControlName="lastName" type="text" pInputText>
+    </div>
+  
+    <div class="p-col-2"></div>
+    <div class="p-col-2 txR">
+      Gender:    
+    </div>
+    <div class="p-col-5 txL">
+      <p-radioButton formControlName="gender" name="gender" value="M" label="Male  "></p-radioButton>
+      <p-radioButton formControlName="gender" name="gender" value="F" label ="Female"></p-radioButton>
+    </div>
+    <div class="p-col-3"></div>
+    <div class="p-col-5"></div>
+    <div class="p-col-2">
+      <button style="margin-right:10px" pButton label="Search" (click)="queryEmployeeByCondition()"></button>
+      <button pButton label="Clear" (click)="clearEmployeeCondion()"></button>
+    </div>
+    <div class="p-col-5">
+    </div>
+    <div class="p-col-12" style="text-align: right;">
+        <button pButton label ="Add"  [routerLink]="['/add']" (click)=add()></button>
+    </div>
+  </div>
+

@@ -1,0 +1,80 @@
+<div class="p-grid" [formGroup]="saveFormGroup">
+    <div class="p-col-2"></div>
+    <div class="p-col-3 txR">
+        Department:
+    </div>
+    <div class="p-col-3 txL">
+        <p-dropdown formControlName="departmentCode"  [options]="departmentDropdownList" placeholder="Select a Department"></p-dropdown>
+    </div>
+    <div class="p-col-4"></div>
+    <div class="p-col-2"></div>
+    <div class="p-col-3 txR">
+        JobTitle:
+    </div>
+    <div class="p-col-3 txL">
+        <p-dropdown formControlName="jobTitleCode" [options]="jobTitleDropdownList" placeholder="Select a Job Title"></p-dropdown>
+    </div>
+    <div class="p-col-4"></div>
+    <div class="p-col-2"></div>
+    <div class="p-col-3 txR">
+        Gender:
+    </div>
+    <div class="p-col-3 txL">
+        <p-radioButton formControlName="gender"  name="gender" value="M" label="Male  "></p-radioButton>
+        <p-radioButton formControlName="gender" name="gender" value="F" label ="Female"></p-radioButton>
+    </div>
+    <div class="p-col-4"></div>
+    <div class="p-col-2"></div>
+    <div class="p-col-3 txR">
+        Title:
+    </div>
+    <div class="p-col-3 txL">
+        <p-dropdown formControlName="title"  [options]="titleDropdownList" placeholder="Select a Title"></p-dropdown>
+    </div>
+    <div class="p-col-4"></div>
+
+    <div class="p-col-2"></div>
+    <div class="p-col-3 txR">
+        First Name:
+    </div>
+    <div class="p-col-3 txL">
+        <input formControlName="firstName" type="text" size="30" pInputText>
+    </div>
+    <div class="p-col-4"></div>
+
+    <div class="p-col-2"></div>
+    <div class="p-col-3 txR">
+        Last Name:
+    </div>
+    <div class="p-col-3 txL">
+        <input formControlName="lastName" type="text" size="30" pInputText>
+    </div>
+    <div class="p-col-4"></div>
+
+    <div class="p-col-2"></div>
+    <div class="p-col-3 txR">
+        Address:
+    </div>
+    <div class="p-col-3 txL">
+        <textarea formControlName="address"  [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+    </div>
+    <div class="p-col-4"></div>
+</div>
+<div class="p-grid" *ngIf="showEdit">
+    <div class="p-col-5"></div>
+    <div class="p-col-5">
+      <button style="margin-right:10px" pButton label="Update" (click)="queryUpdateEmployee()" ></button>
+      <button style="margin-right:10px" pButton label="Clear" (click)="clearEmployeeEdit()"></button>
+      <button style="margin-right:10px" [routerLink]="['']" pButton label="Back" (click)="backToSearch()"></button>
+    </div>
+    <div class="p-col-2"></div>
+</div>
+<div class="p-grid" *ngIf="showAdd">
+    <div class="p-col-5"></div>
+    <div class="p-col-5">
+      <button style="margin-right:10px" pButton label="Submit" (click)="queryInsertEmployee()" ></button>
+      <button style="margin-right:10px" pButton label="Clear" (click)="clearEmployeeAdd()"></button>
+      <button style="margin-right:10px" [routerLink]="['']" pButton label="Back" (click)="backToSearch()"></button>
+    </div>
+    <div class="p-col-2"></div>
+</div>
